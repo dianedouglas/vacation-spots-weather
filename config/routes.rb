@@ -1,4 +1,5 @@
 Places::Application.routes.draw do
+  get "welcome/index"
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
@@ -13,7 +14,7 @@ Places::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'places#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
