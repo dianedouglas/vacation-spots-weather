@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  location: MyString
+  image_url: MyString
+  visit_length: MyString
+  favorite_memory: MyText
+
+two:
+  location: MyString
+  image_url: MyString
+  visit_length: MyString
+  favorite_memory: MyText

@@ -1,0 +1,10 @@
+<h1>Places</h1>
+<%= link_to 'New Place', new_place_path %>
+
+    <% @places.each do |place| %>
+      <%= link_to(place) do %>
+        <h3><%= place.location %></h3>
+      <% end %>
+      <%= image_tag(place.image_url, class: 'list_image') %>
+      <p><%= link_to 'Edit', edit_place_path(place) %> | <%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% end %>

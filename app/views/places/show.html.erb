@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+  <%= @place.location %>
+</h3>
+
+<%= image_tag(@place.image_url, class: 'list_image') %>
+
+
+<p>
+  <strong>Visit length:</strong>
+  <%= @place.visit_length %>
+</p>
+
+<p>
+  <strong>Favorite memory:</strong>
+  <%= @place.favorite_memory %>
+</p>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>
