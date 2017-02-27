@@ -1,3 +1,6 @@
+require 'net/http'
+require 'json'
+
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +13,16 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
+    @url = 'http://api.openweathermap.org/data/2.5/weather?q=' << @place.location << '&units=imperial&APPID=' << ENV['WEATHER_API_KEY']
+    uri = URI(URI.encode(@url))
+    response = Net::HTTP.get(uri)
+    @json = JSON.parse(response)
+    if @json["cod"] == 200
+      @icon_url = 'http://openweathermap.org/img/w/' << @json['weather'][0]['icon'] << '.png'
+      @description = @json['weather'][0]['description']
+      @temperature = @json['main']['temp']
+    end
+
   end
 
   # GET /places/new

@@ -17,5 +17,16 @@
   <%= @place.favorite_memory %>
 </p>
 
+<% if @json["cod"] == 200 %>
+  <div>
+    <%= image_tag(@icon_url) %>
+  </div>
+  <strong>The current weather in <%= @place.location %> is: </strong><span><%= @description %>. The temperature is: <%= @temperature %>&deg;F.</span>
+<% else %>
+  <p>The current weather in <%= @place.location %> is not available right now. Sorry!</p>
+<% end %>
+
+<p>
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>
+</p>
