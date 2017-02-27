@@ -5,8 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.delete_all
+user = User.new(
+  name: 'tester',
+  password: 'secret',
+  password_confirmation: 'secret' 
+)
+user.save
 Place.delete_all
 Place.create!(
+  user_id: user.id,
   location: 'Vancouver, B.C., Canada', 
   image_url: 'http://vancouverbcmover.com/images/richmond.jpg', 
   visit_length: '12 years', 
@@ -14,6 +22,7 @@ Place.create!(
 %{I loved visiting Science World to see the laser shows and the planetarium.}
 )
 Place.create!(
+  user_id: user.id,
   location: 'Boston, MA', 
   image_url: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Bostonstraight.jpg', 
   visit_length: '4 years', 

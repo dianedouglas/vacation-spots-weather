@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227063417) do
+ActiveRecord::Schema.define(version: 20170227074819) do
 
   create_table "places", force: true do |t|
     t.string   "location"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20170227063417) do
     t.text     "favorite_memory"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "places", ["user_id"], name: "index_places_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
