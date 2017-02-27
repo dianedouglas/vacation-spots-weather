@@ -11,13 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227060904) do
+ActiveRecord::Schema.define(version: 20170227063417) do
 
   create_table "places", force: true do |t|
     t.string   "location"
     t.string   "image_url"
     t.string   "visit_length"
     t.text     "favorite_memory"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
