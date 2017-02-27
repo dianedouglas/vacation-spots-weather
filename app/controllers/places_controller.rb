@@ -24,7 +24,7 @@ class PlacesController < ApplicationController
   # POST /places
   # POST /places.json
   def create
-    @place = Place.new(place_params)
+    @place = Place.new(place_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @place.save
@@ -41,7 +41,7 @@ class PlacesController < ApplicationController
   # PATCH/PUT /places/1.json
   def update
     respond_to do |format|
-      if @place.update(place_params)
+      if @place.update(place_params.merge(user_id: current_user.id))
         format.html { redirect_to @place, notice: 'Place was successfully updated.' }
         format.json { head :no_content }
       else
