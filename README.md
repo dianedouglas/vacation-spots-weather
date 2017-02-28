@@ -19,28 +19,32 @@ This app uses the [Open Weather Map API](openweathermap.org/api) to allow you to
 
 To run this app locally:
 
-1. Clone this repository: `git clone https://github.com/dianedouglas/rails-travel-diary`
+* Clone this repository: `git clone https://github.com/dianedouglas/rails-travel-diary`
 
-2. Change directory into the top level of the project folder: `cd rails-travel-diary`
+* Change directory into the top level of the project folder: `cd rails-travel-diary`
 
-3. Install dependencies. This project uses `sqlite3` for a local database and `postgresql` for deployment on Herolku. It uses `bcrypt-ruby` for password encryption. 
+* Install dependencies. This project uses `sqlite3` for a local database and `postgresql` for deployment on Herolku. It uses `bcrypt-ruby` for password encryption. 
 
 ```
 bundle
-// On some machines you may need to run one this command if you encounter errors with bundling:
+```
+
+On some machines you may need to run one this command if you encounter errors with bundling:
+
+```
 ARCHFLAGS="-arch x86_64" bundle
 ```
 
-4. Set up the database and seed it with some starter data:
+* Set up the database and seed it with some starter data:
 
 ```
 rake db:migrate
 rake db:seed
 ```
 
-5. Create a free account at [Open Weather Map](openweathermap.org/api) and copy the generated API Key from [here](https://home.openweathermap.org/api_keys). 
+* Create a free account at [Open Weather Map](openweathermap.org/api) and copy the generated API Key from [here](https://home.openweathermap.org/api_keys). 
 
-6. Load the API key into an environment variable called "WEATHER_API_KEY" using Figaro. Run `bundle exec figaro install` to create the configuration file `config/application.yml` and then paste the following with your api key in:
+* Load the API key into an environment variable called "WEATHER_API_KEY" using Figaro. Run `bundle exec figaro install` to create the configuration file `config/application.yml` and then paste the following with your api key in:
 
 ```
 development:
@@ -53,27 +57,27 @@ production:
   WEATHER_API_KEY: "YOURAPIKEY"
 ```
 
-7. Start a local server with `rails server` and then navigate your browser to `http://localhost:3000/`
+* Start a local server with `rails server` and then navigate your browser to `http://localhost:3000/`
 
-8. Here you can either click "Sign Up" to create an account and try adding some places, or you can log in with the test account using Username: `tester` and Password: `secret`. 
+* Here you can either click "Sign Up" to create an account and try adding some places, or you can log in with the test account using Username: `tester` and Password: `secret`. 
 
 ## Deploy your own on Heroku
 
 Create a free account on Heroku. Then do the initial deploy by following these steps from the top level of the project directory:
 
-1. Install Homebrew, and use it to install the Heroku CLI: `brew install heroku`
-2. Confirm that it has installed correctly by running: `heroku --version` (oddly, I needed to run this a couple times to get it to update and install all dependencies.)
-3. Log into Heroku (it will prompt you for your username/password) `heroku login`
-4. This is already done here, but for your own projects, if you started with the default `rails new projectname` installation, you will need to change your gemfile because you need to use postgres on Heroku. If you don't feel like installing postgres on your local machine, you can use it in production alongside the default sqlite3 database by including the following lines in your gemfile:
+* Install Homebrew, and use it to install the Heroku CLI: `brew install heroku`
+* Confirm that it has installed correctly by running: `heroku --version` (oddly, I needed to run this a couple times to get it to update and install all dependencies.)
+* Log into Heroku (it will prompt you for your username/password) `heroku login`
+* This is already done here, but for your own projects, if you started with the default `rails new projectname` installation, you will need to change your gemfile because you need to use postgres on Heroku. If you don't feel like installing postgres on your local machine, you can use it in production alongside the default sqlite3 database by including the following lines in your gemfile:
 
 ```
 gem 'sqlite3', :group => [:development, :test]
 gem 'pg'
 ```
 
-Then, run `bundle`. As above, if you encounter errors, run this command instead: `ARCHFLAGS="-arch x86_64" bundle`.
-5. Create an app on Heroku: `heroku create`
-6. Use Git to commit and push your work to the newly created Heroku remote (and to GitHub if you like).
+* Then, run `bundle`. As above, if you encounter errors, run this command instead: `ARCHFLAGS="-arch x86_64" bundle`.
+* Create an app on Heroku: `heroku create`
+* Use Git to commit and push your work to the newly created Heroku remote (and to GitHub if you like).
 
 ```
 git config user.name 'yourname'
@@ -84,7 +88,7 @@ git commit -m "Commit message"
 git push heroku master
 ```
 
-7. Make sure set up the database on Heroku and make sure everything deployed correctly with these commands:
+* Make sure set up the database on Heroku and make sure everything deployed correctly with these commands:
 
 ```
 heroku run rake db:migrate
@@ -93,9 +97,9 @@ heroku ps:scale web=1
 heroku ps
 ```
 
-8. Set your environment variables on Heroku so that you can use your API key in production. Make sure you've followed steps 5 and 6 in local setup/installation instructions first to set up the environment variables with Figaro. Then run: `figaro heroku:set -e production`
+* Set your environment variables on Heroku so that you can use your API key in production. Make sure you've followed steps 5 and 6 in local setup/installation instructions first to set up the environment variables with Figaro. Then run: `figaro heroku:set -e production`
 
-9. Open your app with: `heroku open`.
+* Open your app with: `heroku open`.
 
 
 ## To run the tests:
