@@ -29,11 +29,17 @@ class UsersControllerTest < ActionController::TestCase
   test "should show user" do
     get :show, id: @user
     assert_response :success
+    session[:user_id] = nil
+    get :show, id: @user
+    assert_redirected_to login_path
   end
 
   test "should get edit" do
     get :edit, id: @user
     assert_response :success
+    session[:user_id] = nil
+    get :show, id: @user
+    assert_redirected_to login_path
   end
 
   test "should update user" do
