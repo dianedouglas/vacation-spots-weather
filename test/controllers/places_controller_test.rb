@@ -48,6 +48,9 @@ class PlacesControllerTest < ActionController::TestCase
   test "should get edit" do
     get :edit, id: @place
     assert_response :success
+    session[:user_id] = nil
+    get :index
+    assert_redirected_to login_path
   end
 
   test "should update place" do
