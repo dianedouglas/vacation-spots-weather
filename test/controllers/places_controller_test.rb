@@ -24,6 +24,12 @@ class PlacesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should redirect from new place if not logged in." do
+    session[:user_id] = nil
+    get :new
+    assert_redirected_to login_path
+  end
+
   test "should create place" do
     assert_difference('Place.count') do
       post :create, place: { 
