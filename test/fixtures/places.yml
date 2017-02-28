@@ -1,12 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  user: one
   location: MyString
   image_url: MyString
   visit_length: MyString
   favorite_memory: MyText
 
 two:
+  user: one
   location: MyString
   image_url: MyString
   visit_length: MyString
