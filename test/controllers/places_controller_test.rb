@@ -13,6 +13,12 @@ class PlacesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:places)
   end
 
+  test "should redirect from index if not logged in." do
+    session[:user_id] = nil
+    get :index
+    assert_redirected_to login_path
+  end
+
   test "should get new" do
     get :new
     assert_response :success
