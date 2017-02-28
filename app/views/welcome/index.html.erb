@@ -1,6 +1,5 @@
 <div class="welcome">
-  <h3>Welcome!</h3>
-  <h5>This is your Travel Journal!</h5>
+  <h3>Welcome to your Travel Journal!</h3>
   <p>Keep track of all your favorite places here. Where did you last go on vacation? Where did you go to college? Where did you grow up?</p>
   <p>See what the weather is like right now in any of them!</p>
 </div>
@@ -10,40 +9,43 @@
     <%= link_to 'Add Place', new_place_url, :class => "action-button shadow animate blue" %>
   <% end %>
 </div>
+<div class="row">
+  <div class="col-sm-10">
+    <div class="place">
+      <h3>Preview: A Random Place</h3>
 
-<div class="place">
-  <h3>Preview: A Random Place</h3>
+      <h5>
+        <%= @random_place.location %>
+      </h5>
 
-  <h5>
-    <%= @random_place.location %>
-  </h5>
-
-  <p>
-    <strong>From User:</strong>
-    <%= @user.name %>
-  </p>
-
-
-  <%= image_tag(@random_place.image_url, class: 'list_image') %>
+      <p>
+        <strong>From User:</strong>
+        <%= @user.name %>
+      </p>
 
 
-  <p>
-    <strong>Visit length:</strong>
-    <%= @random_place.visit_length %>
-  </p>
+      <%= image_tag(@random_place.image_url, :class => 'list_image img-fluid') %>
 
-  <p>
-    <strong>Favorite memory:</strong>
-    <%= @random_place.favorite_memory %>
-  </p>
 
-  <% if @json["cod"] == 200 %>
-    <div>
-      <%= image_tag(@icon_url) %>
+      <p>
+        <strong>Visit length:</strong>
+        <%= @random_place.visit_length %>
+      </p>
+
+      <p>
+        <strong>Favorite memory:</strong>
+        <%= @random_place.favorite_memory %>
+      </p>
+
+      <% if @json["cod"] == 200 %>
+        <div>
+          <%= image_tag(@icon_url) %>
+        </div>
+        <strong>The current weather in <%= @random_place.location %> is: </strong><span><%= @description %>. The temperature is: <%= @temperature %>&deg;F.</span>
+      <% else %>
+        <p>The current weather in <%= @random_place.location %> is not available right now. Sorry!</p>
+      <% end %>
+
     </div>
-    <strong>The current weather in <%= @random_place.location %> is: </strong><span><%= @description %>. The temperature is: <%= @temperature %>&deg;F.</span>
-  <% else %>
-    <p>The current weather in <%= @random_place.location %> is not available right now. Sorry!</p>
-  <% end %>
-
+  </div>
 </div>

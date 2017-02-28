@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    redirect_to '/'
+    # users page not yet public.
+    # @users = User.all
   end
 
   # GET /users/1

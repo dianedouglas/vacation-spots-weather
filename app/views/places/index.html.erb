@@ -2,12 +2,22 @@
   <%= link_to 'Add Place', new_place_url, :class => "action-button shadow animate blue" %>
 </div>
 
-<% @places.each do |place| %>
-  <%= link_to(place) do %>
-    <div class="place" >
-      <h3><%= place.location %></h3>
-      <%= image_tag(place.image_url, class: 'list_image') %>
-      <p><%= link_to 'Edit', edit_place_path(place) %> | <%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% @places.each_with_index do |place, index| %>
+  <% if index % 2 == 0 %>
+    <div class="row">
+  <% end %>
+  
+  <div class="col-md-6">
+    <%= link_to(place) do %>
+      <div class="place" >
+        <h3><%= place.location %></h3>
+        <%= image_tag(place.image_url, :class => 'list_image img-fluid') %>
+        <p><%= link_to 'Edit', edit_place_path(place) %> | <%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <% if index % 2 == 1 %>
     </div>
   <% end %>
 <% end %>

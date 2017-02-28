@@ -11,23 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
+  <div class="field form-group">
+    <%= f.label :location, 'Location:' %><br>
+    <%= f.text_field :location, :class => "form-control" %>
+    <small class="form-text text-muted">Enter a city with a state or country, or a specific address. For example: "Boston, MA" or "Vancouver, BC, Canada" or "1500 Chestnut St. Philadelphia, PA"</small>
   </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
+  <div class="field form-group">
+    <%= f.label :image_url, 'Image:' %><br>
+    <%= f.text_field :image_url, :class => "form-control" %>
+    <small class="form-text text-muted">Enter the URL for a picture of the place, such as from Google or Imgur.</small>
   </div>
-  <div class="field">
-    <%= f.label :visit_length %><br>
-    <%= f.text_field :visit_length %>
+  <div class="field form-group">
+    <%= f.label :visit_length, 'Length of Visit:' %><br>
+    <%= f.text_field :visit_length, :class => "form-control" %>
+    <small class="form-text text-muted">Did you stay a week? A month? Did you live there for a few years?</small>
   </div>
-  <div class="field">
-    <%= f.label :favorite_memory %><br>
-    <%= f.text_area :favorite_memory, rows: 8 %>
+  <div class="field form-group">
+    <%= f.label :favorite_memory, 'Favorite Memory:' %><br>
+    <%= f.text_area :favorite_memory, rows: 7, :class => "form-control" %>
+    <small class="form-text text-muted">Did you meet a friend there? Did you go to school there? What was your first day there like?</small>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <input class="btn btn-success" name="commit" type="submit" value="Submit">
   </div>
 <% end %>

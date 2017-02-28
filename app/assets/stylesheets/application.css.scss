@@ -11,17 +11,28 @@
  *= require_self
  *= require_tree .
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ body .container .menu, #banner, #main{
+  font-family: Verdana, Geneva, sans-serif;
+ }
+
 .list_image {
   height: 300px;
-  width: 400px;
+  max-width: 400px;
 }
 .menu {
   float: right;
   margin-right: 20px;
+  margin-top: 10px;
 }
 #main {
   float: left;
-  margin: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 #banner {
   margin: 20px;
@@ -40,7 +51,6 @@
   padding: 10px 40px;
   margin: 0px 10px 10px 0px;
   border-radius: 10px;
-  font-family: 'Pacifico', cursive;
   font-size: 25px;
   color: #FFF;
   text-decoration: none;  
@@ -117,5 +127,12 @@
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 50px;
-  margin-top: 20px;
+  h3 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+}
+
+#form_header {
+  margin-bottom: 20px;
 }

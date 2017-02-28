@@ -1,31 +1,36 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm-10">
+    <div class="place">
+      <h3>
+        <%= @place.location %>
+      </h3>
 
-<h3>
-  <%= @place.location %>
-</h3>
+
+      <%= image_tag(@place.image_url, class: 'list_image') %>
 
 
-<%= image_tag(@place.image_url, class: 'list_image') %>
+      <p>
+        <strong>Visit length:</strong>
+        <%= @place.visit_length %>
+      </p>
 
+      <p>
+        <strong>Favorite memory:</strong>
+        <%= @place.favorite_memory %>
+      </p>
 
-<p>
-  <strong>Visit length:</strong>
-  <%= @place.visit_length %>
-</p>
-
-<p>
-  <strong>Favorite memory:</strong>
-  <%= @place.favorite_memory %>
-</p>
-
-<% if @json["cod"] == 200 %>
-  <div>
-    <%= image_tag(@icon_url) %>
+      <% if @json["cod"] == 200 %>
+        <div>
+          <%= image_tag(@icon_url) %>
+        </div>
+        <strong>The current weather in <%= @place.location %> is: </strong><span><%= @description %>. The temperature is: <%= @temperature %>&deg;F.</span>
+      <% else %>
+        <p>The current weather in <%= @place.location %> is not available right now. Sorry!</p>
+      <% end %>
+    </div>
   </div>
-  <strong>The current weather in <%= @place.location %> is: </strong><span><%= @description %>. The temperature is: <%= @temperature %>&deg;F.</span>
-<% else %>
-  <p>The current weather in <%= @place.location %> is not available right now. Sorry!</p>
-<% end %>
+</div>
 
 <p>
 <%= link_to 'Edit', edit_place_path(@place) %> |
