@@ -37,11 +37,11 @@
         <%= @random_place.favorite_memory %>
       </p>
 
-      <% if @json["cod"] == 200 %>
+      <% if @weather[:status] == 200 %>
         <div>
-          <%= image_tag(@icon_url) %>
+          <%= image_tag(@weather[:icon_url]) %>
         </div>
-        <strong>The current weather in <%= @random_place.location %> is: </strong><span><%= @description %>. The temperature is: <%= @temperature %>&deg;F.</span>
+        <strong>The current weather in <%= @random_place.location %> is: </strong><span><%= @weather[:description] %>. The temperature is: <%= @weather[:temperature] %>&deg;F.</span>
       <% else %>
         <p>The current weather in <%= @random_place.location %> is not available right now. Sorry!</p>
       <% end %>
