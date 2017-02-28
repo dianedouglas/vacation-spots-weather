@@ -12,20 +12,11 @@
 <div class="row">
   <div class="col-sm-10">
     <div class="place">
-      <h3>Preview: A Random Place</h3>
-
-      <h5>
-        <%= @random_place.location %>
-      </h5>
-
-      <p>
-        <strong>From User:</strong>
-        <%= @user.name %>
-      </p>
-
+      <h3>
+        Random Place Preview! <%= @random_place.location %>
+      </h3>
 
       <%= image_tag(@random_place.image_url, :class => 'list_image img-fluid') %>
-
 
       <p>
         <strong>Visit length:</strong>
@@ -45,6 +36,11 @@
       <% else %>
         <p>The current weather in <%= @random_place.location %> is not available right now. Sorry!</p>
       <% end %>
+
+      <p>
+        <strong>From User:</strong>
+        <%= @user.name %>
+      </p>
 
     </div>
   </div>

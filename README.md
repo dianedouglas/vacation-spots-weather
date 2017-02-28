@@ -110,6 +110,7 @@ Make sure you're in the top level of the project directory and then run:
 rake db:migrate RAILS_ENV=test
 rake db:fixtures:load
 rake test
+rake test:models
 ```
 
 ## Support and contact details
