@@ -8,7 +8,7 @@
 
 #### [Try it on Heroku: My Favorite Places](https://secret-thicket-66991.herokuapp.com/)
 
-This app uses the [Open Weather Map API](openweathermap.org/api) to allow you to look at the current weather conditions in your favorite places. 
+This app uses the [Open Weather Map API](http://openweathermap.org/api) to allow you to look at the current weather conditions in your favorite places. 
 
 * On the homepage see a preview of a randomized place from a user with their favorite memory, a picture, and the current weather in that place. 
 * Create an account with a username and password, then add some of your favorite places. Where did you last go on vacation? Where did you grow up? Use city, state, or city, country, or even specific addresses.
@@ -61,7 +61,18 @@ production:
 
 * Here you can either click "Sign Up" to create an account and try adding some places, or you can log in with the test account using Username: `tester` and Password: `secret`. 
 
-## Deploy your own on Heroku
+## To Run the Tests:
+
+Make sure you're in the top level of the project directory and then run:
+
+```
+rake db:migrate RAILS_ENV=test
+rake db:fixtures:load
+rake test
+rake test:models
+```
+
+## Deploy Your Own on Heroku
 
 Create a free account on Heroku. Then do the initial deploy by following these steps from the top level of the project directory:
 
@@ -75,7 +86,12 @@ gem 'sqlite3', :group => [:development, :test]
 gem 'pg'
 ```
 
-* Then, run `bundle`. As above, if you encounter errors, run this command instead: `ARCHFLAGS="-arch x86_64" bundle`.
+* Then, run `bundle`. As above, if you encounter errors, run this command instead: 
+
+```
+ARCHFLAGS="-arch x86_64" bundle
+```
+
 * Create an app on Heroku: `heroku create`
 * Use Git to commit and push your work to the newly created Heroku remote (and to GitHub if you like).
 
@@ -84,7 +100,7 @@ git config user.name 'yourname'
 git config user.email 'your@email.com'
 git init
 git add .
-git commit -m "Commit message"
+git commit -m "Write your commit message here."
 git push heroku master
 ```
 
@@ -102,18 +118,7 @@ heroku ps
 * Open your app with: `heroku open`.
 
 
-## To run the tests:
-
-Make sure you're in the top level of the project directory and then run:
-
-```
-rake db:migrate RAILS_ENV=test
-rake db:fixtures:load
-rake test
-rake test:models
-```
-
-## Support and contact details
+## Support and Contact Details
 
 Please feel free to fork this repository and submit pull requests back. You can also contact me here:
 
