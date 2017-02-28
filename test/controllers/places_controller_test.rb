@@ -7,24 +7,18 @@ class PlacesControllerTest < ActionController::TestCase
     session[:user_id] = @user.id
   end
 
-  test "should get index" do
+  test "should get index if logged in" do
     get :index
     assert_response :success
     assert_not_nil assigns(:places)
-  end
-
-  test "should redirect from index if not logged in." do
     session[:user_id] = nil
     get :index
     assert_redirected_to login_path
   end
 
-  test "should get new" do
+  test "should get new if logged in" do
     get :new
     assert_response :success
-  end
-
-  test "should redirect from new place if not logged in." do
     session[:user_id] = nil
     get :new
     assert_redirected_to login_path
@@ -43,9 +37,12 @@ class PlacesControllerTest < ActionController::TestCase
     assert_redirected_to place_path(assigns(:place))
   end
 
-  test "should show place" do
+  test "should show place if logged in" do
     get :show, id: @place
     assert_response :success
+    session[:user_id] = nil
+    get :show, id: @place
+    assert_redirected_to login_path
   end
 
   test "should get edit" do
