@@ -8,17 +8,17 @@
 </head>
 <body>
   <div class="menu">
-    <span><a href="/">Home | </a></span>
+    <span><a href="/">Home</a> | </span>
     <% if !current_user %>
-      <span><%= link_to 'Login | ', login_url %></span>
+      <span><%= link_to 'Login', login_url %></span> | 
       <span><%= link_to 'Sign Up', new_user_url %></span>
     <% else %>
       <span><%= link_to 'Log Out', logout_url, :method => 'delete' %></span>
     <% end %>
   </div>
+  <h1 id="banner">My Favorite Places</h1>
+  <hr>
   <div id="main">
-    <h1>My Favorite Places</h1>
-    <hr>
     <%= yield %>
   </div>
 

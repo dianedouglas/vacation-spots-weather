@@ -1,9 +1,13 @@
-<%= link_to 'New Place', new_place_path %>
+<div class="buttons">
+  <%= link_to 'Add Place', new_place_url, :class => "action-button shadow animate blue" %>
+</div>
 
-    <% @places.each do |place| %>
-      <%= link_to(place) do %>
-        <h3><%= place.location %></h3>
-      <% end %>
+<% @places.each do |place| %>
+  <%= link_to(place) do %>
+    <div class="place" >
+      <h3><%= place.location %></h3>
       <%= image_tag(place.image_url, class: 'list_image') %>
       <p><%= link_to 'Edit', edit_place_path(place) %> | <%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    <% end %>
+    </div>
+  <% end %>
+<% end %>

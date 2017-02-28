@@ -18,13 +18,14 @@
 .menu {
   float: right;
   margin-right: 20px;
-  margin-top: 10px;
 }
 #main {
   float: left;
   margin: 20px;
 }
-
+#banner {
+  margin: 20px;
+}
 /*buttons*/
 
 .animate
@@ -92,7 +93,7 @@
 
 /*TILE*/
 
-.random_place 
+.place 
 {
   background-color: rgba(52, 152, 219, .3);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
