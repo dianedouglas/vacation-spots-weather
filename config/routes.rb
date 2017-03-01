@@ -1,5 +1,5 @@
 Places::Application.routes.draw do
-  get "welcome/index"
+  get 'welcome/index'
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
@@ -16,7 +16,6 @@ Places::Application.routes.draw do
   # root 'welcome#index'
   root 'welcome#index'
   get '*path' => redirect('/')
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

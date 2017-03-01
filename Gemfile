@@ -4,13 +4,13 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', :group => [:development, :test]
 gem 'pg'
+gem 'sqlite3', group: [:development, :test]
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'bootstrap-sass'
+gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -49,3 +49,4 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'rubocop', require: false

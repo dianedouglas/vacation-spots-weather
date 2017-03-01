@@ -47,14 +47,7 @@ rake db:seed
 * Load the API key into an environment variable called "WEATHER_API_KEY" using Figaro. Run `bundle exec figaro install` to create the configuration file `config/application.yml` and then paste the following with your api key in:
 
 ```
-development:
-  WEATHER_API_KEY: "YOURAPIKEY"
-
-test:
-  WEATHER_API_KEY: "YOURAPIKEY"
-
-production:
-  WEATHER_API_KEY: "YOURAPIKEY"
+WEATHER_API_KEY: "YOURAPIKEY"
 ```
 
 * Start a local server with `rails server` and then navigate your browser to `http://localhost:3000/`
