@@ -1,6 +1,6 @@
-# _My Favorite Places_
+# _Rails Travel Diary_
 
-#### _A Rails Travel Diary - See the current weather in your favorite places and revisit your memories!_
+#### _See the current weather in your favorite places and revisit your memories!_
 
 #### By Diane Douglas
 
