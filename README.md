@@ -6,7 +6,7 @@
 
 ## Description
 
-#### [Try it on Heroku: My Favorite Places](https://polar-thicket-38133.herokuapp.com/)
+#### [Try it on Heroku here!](https://polar-thicket-38133.herokuapp.com/)
 
 This app uses the [Open Weather Map API](http://openweathermap.org/api) to allow you to look at the current weather conditions in your favorite places. 
 
