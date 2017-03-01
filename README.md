@@ -23,7 +23,7 @@ To run this app locally:
 
 * Change directory into the top level of the project folder: `cd rails-travel-diary`
 
-* Install dependencies. This project uses `sqlite3` for a local database and `postgresql` for deployment on Herolku. It uses `bcrypt-ruby` for password encryption. 
+* Install dependencies. This project uses `sqlite3` for a local database and `postgresql` for deployment on Heroku. It uses `bcrypt-ruby` for password encryption. 
 
 ```
 bundle
