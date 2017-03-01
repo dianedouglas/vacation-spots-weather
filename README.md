@@ -6,7 +6,7 @@
 
 ## Description
 
-#### [Try it on Heroku: My Favorite Places](https://secret-thicket-66991.herokuapp.com/)
+#### [Try it on Heroku: My Favorite Places](https://polar-thicket-38133.herokuapp.com/)
 
 This app uses the [Open Weather Map API](http://openweathermap.org/api) to allow you to look at the current weather conditions in your favorite places. 
 
@@ -75,7 +75,7 @@ Create a free account on Heroku. Then do the initial deploy by following these s
 * This is already done here, but for your own projects, if you started with the default `rails new projectname` installation, you will need to change your gemfile because you need to use postgres on Heroku. If you don't feel like installing postgres on your local machine, you can use it in production alongside the default sqlite3 database by including the following lines in your gemfile:
 
 ```
-gem 'sqlite3', :group => [:development, :test]
+gem 'sqlite3', group: [:development, :test]
 gem 'pg'
 ```
 
