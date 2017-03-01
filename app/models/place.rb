@@ -3,6 +3,10 @@ require 'json'
 
 class Place < ActiveRecord::Base
   validates :location, :image_url, :visit_length, :favorite_memory, presence: true
+  validates :image_url, allow_blank: true, format: {
+    with: %r{\.(gif|jpg|png|jpeg)\Z}i,
+    message: "Image must be a URL for GIF, JPG or PNG image. For example: http://cruiseweb.com/admin/Images/image-gallery/rainbow-falls-hawaii.jpg"
+  }
   belongs_to :user
   def get_weather
     description = ''

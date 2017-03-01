@@ -36,7 +36,7 @@ Place.create!(
 Place.create!(
   user_id: user.id,
   location: 'Philadelphia, PA',
-  image_url: 'http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1446142365/philadelphia-header-dg1015.jpg?itok=ly_iKkKp',
+  image_url: 'http://cdn.abclocal.go.com/content/wpvi/images/cms/1193287_1280x720.jpg',
   visit_length: '6 months',
   favorite_memory: "I currently live in Philly, and I'll never forget the first time I walked all the way from South Philly up to City Hall looking at all the interesting architecture."
 )

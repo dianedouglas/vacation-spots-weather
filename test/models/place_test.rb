@@ -29,4 +29,16 @@ class PlaceTest < ActiveSupport::TestCase
     weather = place.get_weather
     assert_not_equal weather[:status], 200, 'an invalid location returns default status'
   end
+  test 'an image url returns an error' do
+    place = Place.new(
+      favorite_memory: 'going to the beach',
+      image_url: 'http://www.example.com',
+      location: 'California',
+      visit_length: '1 week',
+      user_id: users(:one).id
+    )
+    place.save
+    assert place.invalid?, 'url must end in image extension.'
+    assert_equal ["Image must be a URL for GIF, JPG or PNG image. For example: http://cruiseweb.com/admin/Images/image-gallery/rainbow-falls-hawaii.jpg"], place.errors[:image_url]
+  end
 end
